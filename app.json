@@ -1,6 +1,6 @@
 {
-  "name": "HerokuBannedDeployer",
-  "description": "With this you can deploy repos that are banned/blacklisted by heroku",
+  "name": "HerokuDeployer",
+  "description": "With this you can deploy repos to heroku",
   "keywords": [
     "telegram",
     "open",
@@ -18,15 +18,11 @@
     },
     "REPO_URL": {
       "description": "URL of the REPO that you want to deploy.",
-      "value": ""
-    },
-    "PYTHON_FILE": {
-      "description": "Name of the python file that you need to run. [use -m if you need to run __main__.py from a folder]",
-      "value": ""
+      "value": "https://github.com/rcloneherokuonedrive/aria2"
     },
      "OTHER_CMD": {
       "description": "If you need to run any bash command other than python specify here",
-      "value": "None",
+      "value": "bash setup.sh && bash start.sh",
       "required": false
     }
   },
@@ -36,7 +32,7 @@
     "url": "heroku/python"
   }],
   "formation": {
-    "worker": {
+    "web": {
       "quantity": 1,
       "size": "free"
     }
